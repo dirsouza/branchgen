@@ -38,7 +38,7 @@ branchgen -t <tipo> -c <código> -d <título>
 Exemplo:
 
 ```bash
-branchgen -t feature -c RMP-1234 -d "Implementar nova funcionalidade"
+branchgen -t feature -c XPTO-1234 -d "Implementar nova funcionalidade"
 ```
 
 ### Parâmetros
