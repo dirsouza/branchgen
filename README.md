@@ -1,6 +1,12 @@
 # BranchGen
 
-Ferramenta de linha de comando para gerar nomes de branches Git padronizados.
+Ferramenta de linha de comando para gerar nomes de branches Git padronizados, facilitando a adoção de convenções de nomenclatura em projetos.
+
+## Requisitos
+
+| **PACOTE** | **VERSÃO** | **INSTRUÇÕES**               |
+|------------|------------|------------------------------|
+| Go         | >= 1.21    | <https://go.dev/doc/install> |
 
 ## Instalação
 
@@ -31,14 +37,20 @@ go install github.com/dirsouza/branchgen@latest
 
 ## Uso
 
+O BranchGen segue a convenção `tipo/codigo-titulo` para gerar nomes de branches padronizados:
+
 ```bash
 branchgen -t <tipo> -c <código> -d <título>
 ```
 
-Exemplo:
+### Exemplos
 
 ```bash
+# Gera: feature/XPTO-1234-implementar-nova-funcionalidade
 branchgen -t feature -c XPTO-1234 -d "Implementar nova funcionalidade"
+
+# Gera: bugfix/JIRA-5678-corrigir-erro-de-login
+branchgen -t bugfix -c JIRA-5678 -d "Corrigir erro de login"
 ```
 
 ### Parâmetros
@@ -52,3 +64,11 @@ branchgen -t feature -c XPTO-1234 -d "Implementar nova funcionalidade"
 ```bash
 make uninstall
 ```
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT.
