@@ -33,7 +33,7 @@ var rootCmd = &cobra.Command{
 }
 
 func Execute() {
-	rootCmd.Flags().StringVarP(&branchType, "tipo", "t", "", "Tipo da branch: feature, bugfix, hotfix, release, support")
+	rootCmd.Flags().StringVarP(&branchType, "tipo", "t", "", "Tipos sugeridos de branch: feature, feat, fix, bugfix, hotfix, release, support")
 	rootCmd.Flags().StringVarP(&branchCode, "codigo", "c", "", "Código da US (User Story) ou tarefa")
 	rootCmd.Flags().StringVarP(&branchTitle, "titulo", "d", "", "Título da branch")
 
