@@ -4,13 +4,27 @@ Ferramenta de linha de comando para gerar nomes de branches Git padronizados, fa
 
 ## Requisitos
 
-| **PACOTE** | **VERSÃO** | **INSTRUÇÕES**               |
-|------------|------------|------------------------------|
-| Go         | >= 1.21    | <https://go.dev/doc/install> |
+| **PACOTE** | **VERSÃO** | **INSTRUÇÕES**                     |
+|------------|------------|------------------------------------|
+| Go         | >= 1.21.x  | <https://go.dev/doc/install>       |
+| XClip      | >= 0.13.x  | <https://github.com/astrand/xclip> |
+| XSel       | >= 1.2.x   | <https://github.com/kfish/xsel>    |
+
+#### Observação
+
+Sobre os pacotes **XClip** e **XSel**, deve ser instalado um o outro, não é necessário que os dois estejam disponíveis.
 
 ## Instalação
 
-### Método 1: Compilação manual
+### Método 1: Usando Go Install
+
+Se você tem Go instalado, pode instalar diretamente com:
+
+```bash
+go install github.com/dirsouza/branchgen@latest
+```
+
+### Método 2: Compilação manual
 
 1. Clone este repositório:
 
@@ -27,17 +41,9 @@ make install
 
 Isso irá compilar o programa e instalá-lo em `/usr/local/bin`, permitindo que você execute o comando `branchgen` de qualquer diretório.
 
-### Método 2: Usando Go Install
-
-Se você tem Go instalado, pode instalar diretamente com:
-
-```bash
-go install github.com/dirsouza/branchgen@latest
-```
-
 ## Uso
 
-O BranchGen segue a convenção `tipo/codigo-titulo` para gerar nomes de branches padronizados:
+O BranchGen segue a convenção `[tipo]/[CODIGO]-[titulo]` para gerar nomes de branches padronizados:
 
 ```bash
 branchgen -t <tipo> -c <código> -d <título>
@@ -55,7 +61,7 @@ branchgen -t bugfix -c JIRA-5678 -d "Corrigir erro de login"
 
 ### Parâmetros
 
-- `-t, --tipo`: Tipo da branch (feature, bugfix, hotfix, release, support)
+- `-t, --tipo`: Tipo da branch _(sugeridos: feature, feat, fix, bugfix, hotfix, release, support)_
 - `-c, --codigo`: Código da US (User Story) ou tarefa
 - `-d, --titulo`: Título da branch
 
